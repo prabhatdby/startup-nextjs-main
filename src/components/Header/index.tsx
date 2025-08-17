@@ -58,10 +58,11 @@ const Header = () => {
                 style={{ display: 'flex', gap: '4px'}}
               >
                 <Image
-                  src="/images/logo/PD_Infosystems.svg"
+                  src="/favicon.png"
                   alt="logo"
-                  width={140}
+                  width={60}
                   height={30}
+                  style={{borderRadius: '10rem'}}
                   // className="dark:hidden"
                 />
                 {/* <Image

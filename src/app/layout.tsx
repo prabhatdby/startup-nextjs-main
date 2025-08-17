@@ -1,12 +1,21 @@
-"use client";
-
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Inter } from "next/font/google";
 import "../styles/index.css";
+import { Providers } from "./providers";
+import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
+
+// 👇 This handles favicon + SEO metadata
+export const metadata: Metadata = {
+  title: "My Website",
+  description: "Awesome website",
+  icons: {
+    icon: "/favicon.png", // public/favicon.png
+  },
+};
 
 export default function RootLayout({
   children,
@@ -15,12 +24,6 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
-
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
         <Providers>
           <Header />
@@ -32,6 +35,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-import { Providers } from "./providers";
-
